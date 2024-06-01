@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import React from "react";
+import { Toaster } from "@/components/ui/sonner"
 
 const openSans = Open_Sans({ subsets: ["latin"] });
 
@@ -25,6 +27,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
         {children}
+        <Toaster position="top-right"/>
         </ThemeProvider>
         </body>
     </html>

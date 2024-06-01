@@ -3,10 +3,16 @@ import React from "react";
 import { Button } from "./ui/button";
 import { supabaseBrowser } from "@/lib/supabase/browser";
 import { User } from "@supabase/supabase-js";
+import { useRouter } from "next/navigation";
 
 const ChatHeader = ({user}:{user:User|undefined}) => {
+  const router = useRouter();
   const handleGoogleLogin = () => {
     supabaseBrowser().auth.signInWithOAuth({ provider: "google",options:{redirectTo:window.location.origin+ "/auth/callback"} });
+  };
+  const handleGoogleLogout = () => {
+    supabaseBrowser().auth.signOut();
+    router.refresh();
   };
   return (
     <div className="h20">
@@ -18,7 +24,7 @@ const ChatHeader = ({user}:{user:User|undefined}) => {
             <h1 className="texsm text-gray-400">2 online</h1>
           </div>
         </div>
-        <Button onClick={handleGoogleLogin}>{user?'Logout':'Login'}</Button>
+        <Button onClick={user?handleGoogleLogout:handleGoogleLogin}>{user?'Logout':'Login'}</Button>
       </div>
     </div>
   );
