@@ -9,6 +9,7 @@ const InitMessages = ({messages}:{messages:IMessage[]}) => {
             useMessage.setState({messages});
         }
         init.current = true;
+        //eslint-disable-next-line
     },[])
   return <></>
 }

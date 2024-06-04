@@ -10,6 +10,7 @@ const InitUser = ({user}:{user:User|undefined}) => {
             useUser.setState({user});
         }
         init.current = true;
+        //eslint-disable-next-line
     },[])
   return <></>
 }

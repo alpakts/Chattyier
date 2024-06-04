@@ -75,15 +75,19 @@ export type Database = {
       }
     }
     Views: {
+      //eslint-disable-next-line
       [_ in never]: never
     }
     Functions: {
+      //eslint-disable-next-line
       [_ in never]: never
     }
     Enums: {
+      //eslint-disable-next-line
       [_ in never]: never
     }
     CompositeTypes: {
+      //eslint-disable-next-line
       [_ in never]: never
     }
   }
