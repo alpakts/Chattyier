@@ -12,7 +12,7 @@ const page = async () => {
     <>
       <InitUser user={data.session?.user}></InitUser>
       <div className="max-w-4xl mx-auto md:py-10  h-screen">
-        <div className="h-full border rounded-md flex flex-col ">
+        <div className="h-full border rounded-md flex flex-col relative  ">
           <ChatHeader user={data.session?.user}></ChatHeader>
           <ChatMessages/>
           <ChatInput user={data.session?.user}></ChatInput>
